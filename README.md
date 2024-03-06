@@ -1,35 +1,28 @@
-# vue-project
+# eslint-plugin-vue-i18n-test
 
-This template should help get you started developing with Vue 3 in Vite.
+`@intlify/vue-i18n/key-format-style` and `@intlify/vue-i18n/no-unused-keys` too since `en.json` file violates the rules:
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```json
+{
+  "unused": "it is unused",
+  "kebab-case": "it is kebab case",
+  "snake_case": "it is snake case"
+}
 ```
 
-### Compile and Hot-Reload for Development
+But
 
 ```sh
-npm run dev
-```
+$ yarn
+$ yarn lint
+arn run v1.22.21
+$ eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore
 
-### Compile and Minify for Production
+/.../src/App.vue
+  11:10  warning  raw text 'RAW TEXT' is used  @intlify/vue-i18n/no-raw-text
 
-```sh
-npm run build
-```
+✖ 1 problem (0 errors, 1 warning)
 
-### Lint with [ESLint](https://eslint.org/)
+✨  Done in 0.79s.
 
-```sh
-npm run lint
 ```
